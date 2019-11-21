@@ -37,8 +37,11 @@ new  将我们的现实思维和代码规则结合  将情商发挥出来
 共同点     不同点  
 boilWater  
  用沸水    茶叶 咖啡
- 方法      重写
+ 方法      重写Beverage
 
  - JS的继承不是血缘关系
-Coffee.prototype = new Beverage();
+Coffee.prototype = new Beverage();//原型对象
+var coffee = new Coffee();
+coffee -> Coffee -> prototype -> Beverage ->prototype-> boliWater 原型链
+
 
