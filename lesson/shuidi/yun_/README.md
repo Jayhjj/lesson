@@ -8,3 +8,9 @@
   npm install vant-weapp -S --production
   线上环境
 
+- 二维码是什么
+  信息的加密
+   isbn   url    公众账号
+
+   isbn 后 怎么拿到图书信息？
+
