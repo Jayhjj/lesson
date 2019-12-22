@@ -5,7 +5,7 @@
    抽象  ->  员工来实现，（前端，后端，美工，函数）  封装
 
 - 工厂类 ，抽象了 队友，敌人
-  playerFactory(name,teamColor)  代理了产生实例额度过程
+  playerFactory(name,teamColor)  代理了产生实例的过程
   players 建立好这个关系
 
   Player  玩家类
@@ -17,4 +17,6 @@
 - die()
 - lose()
 - win()
+- all_dead = true 只要判断一个
+  
   
