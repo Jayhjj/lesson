@@ -4,5 +4,9 @@ router.get('/', async(ctx, next) => {
     // 把模板读取到内存之中，pug 模板的编译
     await ctx.render('index', { title: '首页' });
 });
-// commonjs
+router.post('/form', async(ctx, next) => {
+        console.log('form');
+        ctx.body = ctx.request.bady
+    })
+    // commonjs
 module.exports = router
