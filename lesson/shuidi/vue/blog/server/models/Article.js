@@ -5,14 +5,15 @@
 const mongoose = require('mongoose')
 
 const Schema = new mongoose.Schema({
-    uid:{
-        type:mongoose.SchemaTypes.ObjectId,ref:'User'
+    uid: {
+        type: mongoose.SchemaTypes.ObjectId,
+        ref: 'User'
     },
-    title:{type:String},
-    isTop:{type:Boolean},//置顶
-    summary:{type:String},//列表里的介绍
-    body:{type:String},
-    categories:[{type:mongoose.SchemaTypes.ObjectId,ref:'Category'}]
+    title: { type: String },
+    isTop: { type: Boolean }, //置顶
+    summary: { type: String }, //列表里的介绍
+    body: { type: String },
+    categories: [{ type: mongoose.SchemaTypes.ObjectId, ref: 'Category' }]
 
 })
-module.expoets = mongoose.model('Article',schema,'articles');
+module.exports = mongoose.model('Article', schema, 'articles');
