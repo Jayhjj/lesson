@@ -11,19 +11,48 @@
       <span class="head_logo" slot="logo">ele.me</span>
     </head-top> -->
     <!--地址 -->
-    <head-top head-title="编辑地址" go-back="true">
+    <alert-tip v-if="showAlert" :alertText="alertText" @closeTip="closeAlert"/>
+    <button @click="showCancelAlert">提示退出</button>
+    <button @click="showLoginAlert">提示登录</button>
+    <!-- <head-top head-title="编辑地址" go-back="true">
       <span class="head_logo" slot="logo">ele.me</span>
       <span class="edit" slot="edit">编辑</span>
-    </head-top>
+    </head-top> -->
+    <!-- alert 通用功能 引入 -->
+    <!-- 1. alert 平时不显示， 要它出现时它出现 点击按钮后触发 -->
+    <!-- 提示您的输入有误 消息， 您要退出吗？ 您还没有登录， 要登录 -->
+    
   </div>
 </template>
 <script>
-import Header from './components/header/header';
 
+import AlertTip from './components/common/alertTip';
+// import Header from './components/header/header';
 export default {
+  data() {
+    return {
+      showAlert: false,
+      alertText: ''
+    }
+  },
+  methods: {
+    closeAlert () {
+      this.showAlert = false
+    },
+    showCancelAlert() {
+      this.alertText = '您真的要退出吗?'
+      this.showAlert = true
+    },
+    showLoginAlert() {
+      this.alertText = '您真的要登录吗'
+      this.showAlert = true
+    }
+  },
   components: {
+    // "head-top": Header,
+    'alert-tip': AlertTip
     // 怎么解决？
-    "head-top": Header
+    
   }  
 }
 </script>
