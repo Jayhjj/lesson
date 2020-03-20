@@ -19,3 +19,18 @@
         validate:function(){} return boolean
     }
     ['type','title']//粗线条系的
+
+1. 怎么使用Element-ui
+import ElementUI from 'element-ui
+Vue.use(ElenentUI)
+所有的组件就全局使用
+ - Vue.use 背后在干什么
+ - 如果我只想使用部分组件，而不是所有 怎么解决？
+ js 越少越好，项目中用不到所有组件。只使用部分，怎么实现？ 项目越快 
+
+ - 每个组件都是一个目录
+ carousel 组件 设计成了一个父子组件 各司其职 拆分的足够细 
+
+ carousel-item 
+ 划分职责
+ 容器组件， 横向|竖向 

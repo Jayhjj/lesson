@@ -1,33 +1,39 @@
 <template>
   <div id="app">
-    <el-alert
-      title="成功提示的文案"
-      type="success"
-      >
-      </el-alert>
-    <!-- <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <carousel height="150px">
+      <carousel-item v-for="item in 4" :key="item">
+        <h3 class="small">{{ item }}</h3>
+      </carousel-item>
+    </carousel>
+    <!-- <carousel-item /> -->
+    <!-- <el-alert
+    title="成功提示的文案"
+    type="error"
+    >
+    </el-alert> -->
+    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
 </template>
 
 <script>
-import ElAlert from './components/ElAlert.vue'
+// import ElAlert from './components/ElAlert.vue'
 
 export default {
   name: 'App',
   components: {
-    ElAlert
+    // ElAlert
+    // 'carousel': Carousel
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+* {
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  background-color: green;
 }
 </style>

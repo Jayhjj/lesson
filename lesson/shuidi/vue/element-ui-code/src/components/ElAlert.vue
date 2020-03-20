@@ -14,6 +14,7 @@
         
     </div>
 </transition>
+
 </template>
 <script>
 const TYPE_CLASS_MAP ={
