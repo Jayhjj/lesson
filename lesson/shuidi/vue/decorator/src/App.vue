@@ -44,7 +44,19 @@
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
 import { MessageBox } from 'element-ui';
-// 将handelDelete没有confirm功能的毛坯房函数装修到有confirm功能
+// 将handleDelete没有confirm 功能的毛坯函数装修倒有cofirm 功能
+function confirmation(target, name, descriptor) {
+  // console.log(target, name, descriptor);
+  let oldValue = descriptor.value;
+  console.log(oldValue)
+  descriptor.value = function(...args) {
+    // console.log(args);
+    MessageBox.confirm('你确定要删除吗', '提示')
+      .then(oldValue.bind(this, ...args))
+      .catch(() => {})
+  }
+  return descriptor;
+}
 export default {
   name: 'App',
   data() {
@@ -72,20 +84,10 @@ export default {
     // HelloWorld
   },
   methods: {
-    // @confirmation
+    // 很多地方要被提醒的用户体验
+    @confirmation
     handleDelete(index, row) {
-
-      // console.log(index, row)
-      // 新手
-      // 删除前 警告一下
-      // this.list.splice(index, 1);
-      // MessageBox.confirm('您确定要删除吗', '提示')
-      //   .then(() => {
-      //     this.list.splice(arguments[0], 1);
-      //   })
-      //   .catch(() => {
-
-      //   })
+      this.list.splice(index, 1)
     }
   }
 }

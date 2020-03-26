@@ -6,74 +6,71 @@
     </div>
     <router-view/> -->
     <h1>订单管理</h1>
-  <el-table
-  v-loading = "listLoading"
-  :data = "list">
-  <el-table-column label = "ID"
-  prop = "_id"
-  align = "center"
-  width = "80">
-   <template slot-scope="{row}">
-      <span class="red">{{row._id}}</span>
-    </template>
-  </el-table-column>
-   
-   <el-table-column label = "Name"
-  prop = "name"
-  align = "center"
-  width = "200">
-   <template slot-scope="{row}">
-      <span class="red">{{row.name}}</span>
-    </template>
-  </el-table-column>
-
-   <el-table-column label = "OrderDate"
-  prop = "orderDate"
-  align = "center"
-  width = "400">
-   <template slot-scope="{row}">
-      <span class="red">{{row.orderDate}}</span>
-    </template>
-  </el-table-column>
-
-  <el-table-column label = "状态"
-  prop = "status"
-  align = "center"
-  width = "400">
-   <template slot-scope="{row}">
-      <span class="red">{{row.status}}</span>
-    </template>
-  </el-table-column>
-
-  <el-table-column label = "邮费"
-  prop = "shippingFee"
-  align = "center"
-  width = "400">
-   <template slot-scope="{row}">
-      <span class="red">{{row.shippingFee}}</span>
-    </template>
-  </el-table-column>
-  <el-table-column label = "单价"
-  prop = "total"
-  align = "center"
-  width = "400">
-   <template slot-scope="{row}">
-      <span class="red">{{row.total}}</span>
-    </template>
-  </el-table-column>
-  
-  </el-table>
-  <el-pagination
-    :current-page.sync="page"
-    :total="total"
-    :pageSize = "limit"
-  >
-  </el-pagination>
+    <!-- el-form   -->
+    <el-table
+      v-loading="listLoading"
+      :data="list">
+      <el-table-column label="ID" 
+      prop="_id"
+      align="center"
+      width="80">
+        <template slot-scope="{row}">
+          <span>{{row._id}}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="Name" 
+      prop="name"
+      align="center"
+      width="200">
+        <template slot-scope="{row}">
+          <span>{{row.name}}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="OrderDate" 
+      prop="orderDate"
+      align="center"
+      width="400">
+        <template slot-scope="{row}">
+          <span>{{row.orderDate}}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="状态" 
+      prop="status"
+      align="center"
+      width="100">
+        <template slot-scope="{row}">
+          <span>{{row.status}}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="邮费" 
+      prop="shippingFee"
+      align="center"
+      width="100">
+        <template slot-scope="{row}">
+          <span>{{row.shippingFee}}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="单价" 
+      prop="total"
+      align="center"
+      width="100">
+        <template slot-scope="{row}">
+          <span>{{row.total}}</span>
+        </template>
+      </el-table-column>
+    </el-table>
+    <el-pagination
+      :current-page.sync="page"
+      :total="total"
+      :pageSize="limit"
+      layout="total, prev, pager, next"
+      @current-change="handleCurrentChange">
+    </el-pagination>
   </div>
 </template>
 
 <style>
-.red{
+.red {
   color: red;
 }
 #app {
@@ -101,62 +98,40 @@
 <script>
 import Axios from 'axios';
 export default {
-  data(){
-    return{
-      page:1,
-      total:1000,
-      limit:20,
-      listLoading:true,
-      list:[
-        {
-          "_id": '1234',
-          "name": "jay",
-          "orderDate":new Date(),
-          "status":"completed",
-          shippingFee:1.5,
-           total:20.11
-        },
-        {
-          "_id": '1234',
-          "name": "jay1",
-          "orderDate":new Date(),
-          "status":"cancel",
-           shippingFee:1.5,
-           total:20.11
-        },
-        {
-          "_id": '1234',
-          "name": "jay2",
-          "orderDate":new Date(),
-          "status":"created",
-           shippingFee:1.5,
-          total:20.11
-        }
+  data() {
+    return {
+      page: 1,
+      total: 0,
+      limit: 20,
+      listLoading: true, //加载数据中
+      list: [
       ]
     }
   },
-  mounted(){
-    // setTimeout(() =>{
+  mounted() {
+    // setTimeout(() => {
     //   this.listLoading = false
-    // },1000)
-    Axios.post('/api/orders',{
-      params:{
-        //分页
+    // }, 1000)
+    Axios.get('/api/orders', {
+      params: {
+        limit: this.limit,
+        page: this.page
       }
     })
-    .then(res =>{
-      // console.log(res);
-      this.list = res.data.orders
-       setTimeout(() =>{
-      this.listLoading = false
-    },1000)
+    .then(res => {
+      console.log(res);
+      this.list = res.data.result
+      this.total = res.data.total
+      setTimeout(() => {
+        this.listLoading = false
+      }, 1000)
     })
+    
   },
-  methods:{
-    handleCurrentChange(page){
+  methods: {
+    handleCurrentChange(page) {
       console.log(page);
     }
   }
 }
-
 </script>
