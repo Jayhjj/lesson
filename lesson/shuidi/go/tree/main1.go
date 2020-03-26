@@ -27,8 +27,7 @@ func (node *Node)FindNode(n *Node, x int) *Node {
 func (node *Node)GetTreeHeight(n *Node)int{
 	if n ==nil{
 		return 0 
-	}
-	else{
+	}else{
 		// 当前节点的高度？ Math.max(左子树的高度+1 右子树的高度+1)
 		lHeight := node.GetTreeHeight(n.left)
 		rHeigth := node.GetTreeHeight(n.right)
@@ -49,6 +48,38 @@ func(node *Node)GetLeafNode(n *Node){
 		node.GetLeafNode(n.left)
 		node.GetLeafNode(n.right)
 	}
+}
+func trans(root * Node) {
+	
+	if root == nil {
+		return
+	}
+	fmt.Println(root)
+	trans(root.left)
+	trans(root.right)
+	
+}
+func trans1(root * Node) {
+	
+	if root == nil {
+		return
+	}
+	
+	trans1(root.left)
+	fmt.Println(root)
+	trans1(root.right)
+	
+}
+func trans2(root * Node) {
+	
+	if root == nil {
+		return
+	}
+	
+	trans2(root.left)
+	trans2(root.right)
+	fmt.Println(root)
+	
 }
 
 func CreateNode(value int) *Node {
@@ -75,5 +106,12 @@ func main() {
   fmt.Printf("%d\n", root.FindNode(root, 4).value)  // 4的节点
   fmt.Printf("%d\n", root.GetTreeHeight(root))  // 树的高度  递归
   root.GetLeafNode(root)//所有叶子节点
+  fmt.Println("先序遍历：")
+	trans(root)
+  fmt.Println("中序遍历：")
+	trans1(root)
+  fmt.Println("后序遍历：")
+	trans2(root)
+ 
 }
 // 实现先中后序遍历
