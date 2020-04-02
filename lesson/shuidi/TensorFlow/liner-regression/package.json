@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@tensorflow/tfjs": "^1.7.1",
+    "@tensorflow/tfjs-vis": "^1.4.0"
+  }
+}
