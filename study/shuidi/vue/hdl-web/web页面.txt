@@ -1,0 +1,13 @@
+冉娜:   stores.html  
+	storesGPS.html
+
+设置的css文件：   personIndex.css  
+                  stores.css 
+                  storesGPS.css
+
+赖晓敏：
+	book.html
+	takeout.html
+css:
+	book.css
+	takeout.css

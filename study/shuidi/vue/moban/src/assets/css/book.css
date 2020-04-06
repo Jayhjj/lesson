@@ -1,0 +1,106 @@
+#header{
+	background: #ffffff;
+	width:100%;
+	text-align: center;
+	line-height: 0.45rem;
+	height: 0.45rem;
+	position: relative;
+}
+#header a{
+	display: block;
+	width: 0.45rem;
+	position: absolute;
+	height: 0.45rem;
+	line-height: 0.45rem;
+	left: 0;
+	top: 0;
+	color: #d43d3d;
+}
+#banner{
+	width: 100%;
+	height: 1rem;
+	padding: 0.15rem;
+	box-sizing: border-box;
+	background: url(../images/Book/book_background.png) no-repeat center/100% 100%;
+	display: flex;
+}
+#banner .shopnews{
+	flex: 2;
+}
+#banner .shopnews h2{
+	color: #f5d863;
+	font-size: 0.2rem;
+}
+#banner .shopnews p{
+	flex: 2;
+	color: #fff;
+	font-size: 0.12rem;
+	line-height: 0.2rem;
+}
+#banner span{
+	flex: 1;
+	color: #f5d863;
+	text-align: right;
+	font-size: 0.14rem;
+}
+#main ul li{
+	background: #fff;
+	width: 100%;
+	height: 0.6rem;
+	line-height: 0.6rem;
+	margin-bottom: 1px;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 0.06rem 0 0.16rem;
+	font-size: 0.14rem;
+}
+#main ul li:nth-child(1){
+	display: flex;
+	justify-content: space-between;
+}
+#main ul li:nth-child(1) .time input{
+	width: 1rem;
+}
+#main ul li:nth-child .time i(1){
+	display: block;
+	width: 0.2rem;
+	float: right;
+}
+#main ul li:nth-child(3),#main ul li:nth-child(5){
+	padding-right: 0.1rem;
+}
+#main ul li:nth-child(2){
+	margin-bottom: 0.1rem;
+}
+#main ul li:last-child{
+	margin-top: 0.1rem;
+}
+#main input{
+	border: 0;
+}
+#main input[type="text"]{
+	width: 30%;
+}
+#main input[type="button"]{
+	width: 0.8rem;
+	height: 0.3rem;
+	color: #c1c1c1;
+	background: #;
+	border-radius:0.03rem;
+}
+#main ul li i{
+	font-size: 0.16rem;
+	margin-right: 0.1rem;
+}
+#main ul li b{
+	box-sizing: border-box;
+}
+#main input[type="submit"]{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 0.5rem;
+	font-size: 0.18rem;
+}

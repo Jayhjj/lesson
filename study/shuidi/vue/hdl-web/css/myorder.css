@@ -1,0 +1,141 @@
+*{
+	    		margin: 0px;
+	    		padding: 0px;
+	    	}
+  html{
+   	font-size: 625%;
+   }
+   body{
+   	padding-bottom: .5rem;
+   	font-size: .16rem;
+   	overflow-x:auto ;
+   	/*background: #f0efed;*/
+   	background: #f9f9f9;
+   	
+   }
+	ul,li,li,ol,a{
+		text-decoration:none;
+		list-style: none;
+	}
+	.head{
+		width: 100%;
+		height: .5rem;
+		display: flex;
+		background: #FFFFFF;
+	}
+	.head a{
+		display: block;
+		width: ;
+		line-height: .5rem;
+		color: #c85e68;
+		padding-left: .1rem;
+	}
+    .head span{
+		display: block;
+		flex: 1;
+		text-align: center;
+		line-height: .5rem;
+		color: #02313b;
+	}
+	
+.box{
+	width: 80%;
+	display: flex;
+	margin: .1rem auto;
+	border:.01rem solid gainsboro ;
+	border-radius: 5%;
+	overflow: hidden;
+}
+.box .left{
+	background:#d63c3e;
+	width: 50%;
+	height: .32rem;
+	line-height: .32rem;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+.box .right{
+	width: 50%;
+	background: #FFFFFF;
+	height:.32rem;
+	line-height: .32rem;
+	text-align: center;
+}
+
+.nav{
+	width: 100%;
+	background: #FFFFFF;
+}
+.nav .gd,.gd_a,dl dt,.fw{
+	
+	padding: .15rem .11rem;
+    width: 90%;
+    margin: auto;
+    border-bottom: .01rem solid gainsboro;
+	
+}
+.nav dl dt,dl dd .sp_2,.sp_1{
+	color: gray;
+}
+.nav dl dd{
+	width: 90%;
+	margin: auto;
+	line-height: .35rem;
+}
+.nav .gd_a,.fw,dl dd{
+	display: flex;
+	justify-content: space-between;
+}
+
+.fw{
+	border-top: .01rem solid gainsboro;
+	color: gray;
+}
+
+.ts,.fp,.qt{
+	margin-top: .1rem;
+	display: flex;
+	width: 100%;
+	line-height: .4rem;
+	background: #FFFFFF;
+	justify-content: space-between;
+}
+.ts .sp_3,.fp .sp_3,.qt .sp_3{
+	padding-left: .1rem;
+	
+}
+.ts .iconfont,.fp .iconfont{
+	
+	padding-right: .1rem;
+}
+.zf{
+	display: flex;
+	width: 100%;
+	position: fixed;
+	height: .5rem;
+	bottom: 0;
+	left: 0;
+}
+
+.zf .mozf{
+	width: 70%;
+	padding-left: .15rem;
+	height: .5rem;
+	line-height: .5rem;
+	
+	background: #272727;
+	color: #FFFFFF;
+}
+.zf .mozf span{
+	padding-left: .05rem;
+}
+.zf a{
+	display: block;
+   flex: 1;
+   height: .5rem;
+   line-height: .5rem;
+   text-align: center;
+   background: #d43d3d;
+   color: #F9F9F9;
+}

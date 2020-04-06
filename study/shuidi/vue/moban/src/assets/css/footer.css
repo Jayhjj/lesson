@@ -1,0 +1,90 @@
+body{
+	padding-bottom: .5rem;
+	overflow-x: hidden;
+}
+
+/*底部*/
+#footer{
+	display: flex;
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	height: .5rem;
+}
+#footer ul{
+	border-top: 1px #EEEEEE solid;
+	display: flex;
+	width: 100%;
+	background: #fff;
+}
+#footer ul li{
+	display: flex;
+	justify-content: space-between;
+	width: 25%;
+	justify-content: center;
+	align-items: center;
+}
+#footer ul li a{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	
+}
+#footer ul li a i{
+	font-size: .2rem;
+}
+#footer ul li a span{
+	font-size: .14rem;
+}
+.d43d3d{
+	background: #d43d3d;
+	color: #fff;
+}
+
+/*第11/12张头部*/
+header{
+	width: 100%;
+	height: 0.44rem;
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 0.1rem 0 0.14rem;
+	position: fixed;
+	box-sizing: border-box;
+	box-shadow:1px 1px 1px 1px #ccc;
+	background: #fff;
+}
+header .left{
+	display: flex;
+}
+header .left i.back{
+	font-size: 0.15rem;
+    color: #d43d3d;
+    font-weight: 700;
+    position: relative;
+    left: -0.03rem;
+    margin-right: 0.06rem;
+}
+header .left .GPS{
+	color: #333;
+	font-size: 0.14rem;
+}
+header .left .GPS i.dingwei{
+	font-size: 0.18rem;
+    position: relative;
+    top: 0.015rem;
+    font-weight: 700;;
+}
+header .left .GPS span.address{
+	margin-left: -0.04rem;
+}
+header .left .GPS i.todown{
+	font-size: 0.12rem;
+	color: #999;
+}
+header > p{
+	color: #d43d3d;
+	font-size: 0.12rem;
+}

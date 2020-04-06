@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Tetris</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div id = "waiting"></div>
+		<div class="square" id = "local"> 
+			<div class="game" id="local_game"></div>
+			<div class="text">Next Block</div>
+			<div class="next" id="local_next"></div>
+			<div class="info">Game Info
+				<div class="sub-info"> Time: <br><span id="local_time">0</span>sec</br></div>
+				<div class="sub-info"> Score: <br><span id="local_score">0</span>G</br></div>
+				<div class="sub-info"> Result: <br><span id="local_gameover">?</span></br></div>
+			</div>
+			<div class="title">Tetris Player One</div>
+		</div>
+		<script src="js/square.js"></script>
+		<script src="js/squareFactory.js"></script>
+		<script src="js/game.js"></script>
+		<script src="js/local.js"></script>
+		<script src="js/script.js"></script>
+	</body>
+	
+</html>
