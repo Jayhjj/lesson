@@ -8,13 +8,19 @@ const resolve = src => {
 const files = findSync('config')
 module.exports = () => {
     // console.log('在这里做基本配置吧');
-    config
-        .entry('app')
-        .add(resolve('src/main.js'))
-        .end()
-        .set('mode', process.env.NODE_ENV)
-        .output.path(path.join(process.cwd(), 'dist'))
-        .filename('[name].bundle.js');
-
+    // config
+    //     .entry('app')
+    //     .add(resolve('src/main.js'))
+    //     .end()
+    //     .set('mode', process.env.NODE_ENV)
+    //     .output.path(path.join(process.cwd(), 'dist'))
+    //     .filename('[name].bundle.js');
+    const map = new Map();
+    files.map(file =>{
+        const name = file.split('/').pop().replace('.js','');
+        return map.set(name,require(file)(config,resolve))
+        // console.log(name,'----------');
+    })
+    map.forEach(v =>v())
     return config;
 }
