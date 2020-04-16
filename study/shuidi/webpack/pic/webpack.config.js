@@ -1,6 +1,7 @@
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const path = require('path');
+
 module.exports = {
   mode: 'development',
   entry: './src/main.js',
@@ -75,6 +76,16 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf|svg)(\?.*)?$/i,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts/'
+          }
+        }
       }
     ]
   },
