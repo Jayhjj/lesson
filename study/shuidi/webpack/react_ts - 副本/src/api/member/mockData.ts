@@ -1,5 +1,5 @@
 // es6  vue 使用ts 写出来， 编译的
-import { MemberEntity } from '../../model/memberEntity';
+import { MemberEntity } from '../../model'
 export const members: MemberEntity[] = [
   {
     id: 1457912,

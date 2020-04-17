@@ -21,7 +21,16 @@ webpack 编译  nginx docker  阿里云 build  node
   entry 可以有多个打包的入口吗？ 为什么
   vendor 库  vue.js  vuex vue-router 
   提升了编译速度， 同时保障及改善了用户的浏览体验  缓存
-
 5. tsx 再工作流是如何完成编译支持的
-resolve.extendsions tsx -> moudle,test .tsx? -> awesome-typescript-loader -> tsconfig.json jsx -> react -> babel
-jsx 良好表现的template语法
+  resolve.extendsions tsx -> module, test .tsx?-> awesome-typescript-loader -> tsconfig.json jsx-> react -> 
+  babel 
+  jSX 良好表现的template 语法
+- dist 目录不删除再生成？ 历史版本都留下， 利于回滚代码
+
+-  react 语法，  ts    
+  router + redux + api 类型约束   
+- <{}> 怎么想通
+  1. App AppRouter 引入的/ 组件，  类型定义  header  html StatelessComponent
+  2. React.StatelessComponent<{}>  type 申明的类型，     定义文件 node_modules/@types/index.t.  类型定义， ts 的难点
+- bootstrap entry 多入口
+- switch 只匹配一个哦
