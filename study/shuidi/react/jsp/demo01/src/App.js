@@ -3,9 +3,10 @@ import React ,{Component} from 'react'
 class App extends Component{
     render(){
         return(
-            <div>
-                Hello jay
-            </div>
+          <ul className="my-list">
+              <li>jay.com</li>
+              <li>I Love React</li>
+          </ul>
         )
     }
 }
