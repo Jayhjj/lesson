@@ -9,8 +9,8 @@
               <el-table-column prop="count" label="数量" width="50"></el-table-column>
               <el-table-column prop="price" label="价格" width="70"></el-table-column>
               <el-table-column label="操作" width="100" fixed="right">
-                <template scope="scope">
-                  <el-button type="text" size="small" >删除</el-button>
+                <template slot-scope="scope">
+                  <el-button type="text" size="small" @click="deleteSingleGoods(scope.row)">删除</el-button>
                   <el-button type="text" size="small" @click="addOrderList(scope.row)">增加</el-button>
                 </template>
               </el-table-column>
@@ -20,8 +20,8 @@
             </div>
             <div class="div-btn">
               <el-button type="warning">接单</el-button>
-              <el-button type="danger">删除</el-button>
-              <el-button type="success">结账</el-button>
+              <el-button type="danger" @click="deleteAllGoods">删除</el-button>
+              <el-button type="success" @click="checkout">结账</el-button>
             </div>
           </el-tab-pane>
           <el-tab-pane label="接单">
@@ -173,12 +173,44 @@ export default {
           this.tableData.push(newGoods);
         }
         // 计算
-        this.tableData.foreach(element=>{
+       this.getAllMoney();
+      }
+    },
+    deleteSingleGoods(goods){
+      this.tableData=this.tableData.filter(o=>o.goodsId!=goods.goodsId);
+      this.getAllMoney();
+    },
+    deleteAllGoods(){
+      this.tableData=[];
+      this.totalCount=0;
+      this.totalMoney=0;
+    },
+    //汇总数量和金额
+    getAllMoney(){
+      this.totalMoney=0;
+      this.totalCount=0;
+      if(this.tableData){
+         this.tableData.foreach(element=>{
           this.totalCount=element.count;
           this.totalMoney = this.totalMoney+(element.price*totalCount.count);
         })
       }
+    },
+    //模拟结账
+    checkout(){
+      if(this.totalCount!=0){
+        this.tableData=[];
+        this.totalCount=0;
+        this.totalMoney=0;
+        this.$message({
+          message:"结账成功",
+          type:'success'
+        });
+      }else{
+        this.$message.error('不能为空，老板了解你心情急切')
+      }
     }
+
   }
 };
 </script>
