@@ -1,4 +1,4 @@
-var HtmlWebpackPlugin = require("html-webpack-plugin");
+  var HtmlWebpackPlugin = require("html-webpack-plugin");
 var MiniCssExtractPlugin = require("mini-css-extract-plugin");
 var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 var webpack = require("webpack");
@@ -16,7 +16,7 @@ module.exports = {
     path: path.join(basePath, "dist"),
     filename: "bundle.js"
   },
-  devtools:"source-map",//源码映射 .styl  .ts
+  devtool: "source-map",// 源码映射 .styl .ts 
   devServer: {
     contentBase: "./dist", // Content base
     inline: true, // Enable watch and live reload
@@ -37,7 +37,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ["style-loader","css-loader?sourecMap"]
+        use: ["style-loader","css-loader?sourceMap"]
         // 不抽也能执行  css style text js 寄生
         // use: [MiniCssExtractPlugin.loader,"css-loader"]
       },
@@ -61,6 +61,7 @@ module.exports = {
       filename: "[name].css",
       chunkFilename: "[id].css"
     }),
+    // 对css优化
     new OptimizeCssAssetsPlugin()
   ]
 };
