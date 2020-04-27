@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>外送信息</title>
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/takeout.css"/>
+	</head>
+	<body>
+		<div id="header">
+			<a href="#">
+				<i class="iconfont">&#xe603;</i>
+			</a>
+			外送信息
+		</div>
+		<div id="main">
+			<form method="post">
+				<ul>
+					<li>
+						<div>
+							<i class="iconfont">&#xe605;</i>
+							<b>姓　名：　</b>
+							<input type="text" name="name" id="name" placeholder="请输入姓名" />
+						</div>
+						<div class="sex">
+							<input type="radio" name="sex"/>先生
+							<input type="radio" name="sex"/>女士
+						</div>
+					</li>
+					<li>
+						<div>
+							<i class="iconfont">&#xe61d;</i>
+							<b>手机号：　</b>
+							<input type="text" name="tel" id="tel" placeholder="请输入手机号" />
+						</div>
+					</li>
+					<li>
+						<div>
+							<i class="iconfont">&#xe645;</i>
+							<b>验证码：　</b>
+							<input type="text" placeholder="请输入验证码" />
+						</div>
+						<div>
+							<input type="button" value="获取验证码" class="d43d3d"/>
+						</div>
+					</li>
+					<li>
+						<div>
+							<i class="iconfont">&#xe61d;</i>
+							<b>外送地址：　</b>
+							<input type="text" placeholder="选择配送地址" />
+						</div>
+					</li>
+					<li>
+						<div>
+							<i class="iconfont">&#xe61d;</i>
+							<b>详细地址：　</b>
+							<input type="text" placeholder="例：16号楼三单元401" />
+						</div>
+					</li>
+				</ul>
+				<input type="submit" value="确　定" class="d43d3d"/>
+			</form>
+		</div>
+	</body>
+</html>

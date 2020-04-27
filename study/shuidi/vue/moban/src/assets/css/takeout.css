@@ -1,0 +1,68 @@
+#header{
+	background: #ffffff;
+	width:100%;
+	text-align: center;
+	line-height: 0.45rem;
+	height: 0.45rem;
+	position: relative;
+}
+#header a{
+	display: block;
+	width: 0.45rem;
+	position: absolute;
+	height: 0.45rem;
+	line-height: 0.45rem;
+	left: 0;
+	top: 0;
+	color: #d43d3d;
+}
+#main ul li{
+	background: #fff;
+	width: 100%;
+	height: 0.4rem;
+	line-height: 0.4rem;
+	margin-bottom: 1px;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 0.06rem 0 0.16rem;
+	font-size: 0.14rem;
+}
+#main ul li:nth-child(3),#main ul li:nth-child(5){
+	padding-right: 0.1rem;
+}
+#main ul li:nth-child(1) .sex{
+	width: 1rem;
+}
+#main ul li:nth-child(3){
+	margin-bottom: 0.1rem;
+}
+#main ul li:last-child input{
+	width: 2rem;
+}
+#main input{
+	border: 0;
+}
+#main input[type="text"]{
+	width: 32%;
+}
+#main input[type="button"]{
+	width: 0.8rem;
+	height: 0.3rem;
+	border-radius:0.03rem;
+}
+#main ul li i{
+	font-size: 0.16rem;
+	margin-right: 0.1rem;
+}
+#main ul li b{
+	box-sizing: border-box;
+}
+#main input[type="button"]{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 0.5rem;
+	font-size: 0.18rem;
+}

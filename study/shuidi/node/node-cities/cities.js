@@ -1,0 +1,14 @@
+const axios = require('axios');
+const fs = require('fs');
+
+axios({
+        method: 'get',
+        url: 'https://raw.githubusercontent.com/lutangar/cities.json/master/cities.json',
+        responseType: 'stream'
+    })
+    .then(async function(response) {
+        response.data.pipe(fs.createWriteStream('cities.json'))
+    });
+// axios.get("https://raw.githubusercontent.com/lutangar/cities.json/master/cities.json").then(res=>{
+//     response.data.pipe(fs.createWriteStream('cities.json'))
+// });

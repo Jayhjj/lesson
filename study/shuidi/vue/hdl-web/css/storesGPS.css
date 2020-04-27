@@ -1,0 +1,38 @@
+html{
+	font-size: 625%;
+}
+body{
+	font-size: 0.16rem;
+	background: #f9f9f9;
+	padding-bottom: 0;
+}
+span#zw{
+	display: block;
+	height: 0.45rem;
+}
+
+
+main #top_content{
+	height: 1.85rem;
+	border: 0.01rem solid #e3e3e3;
+}
+main #top_content p.title-city{
+	padding: 0 30px 10px;
+	font-size: 0.14rem;
+	color: #999;
+}
+main #top_content div.city_content{
+	padding-left:30px;
+}
+main #top_content div.city_content a{
+	display: block;
+	float: left;
+	width: 19%;
+	margin: 0 4% 0.1rem 0;
+	font-size: 0.14rem;
+	background: #fff;
+	border: 0.01rem solid #d9d9d9;
+	border-radius: 0.03rem;
+	text-align: center;
+	padding: 0.05rem 0.12rem;
+}
