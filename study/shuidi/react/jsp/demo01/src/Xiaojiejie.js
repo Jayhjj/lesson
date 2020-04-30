@@ -31,9 +31,11 @@ import XiaoxjiejieItem from './XiaojiejieItem'
                                 // </li>
                                
                                     <XiaoxjiejieItem 
+                                        avname='波多野结衣'
                                         key={index+item}
                                         content={item}
                                         index = {index}
+                                        list={this.state.list}
                                         deleteItem={this.deleteItem.bind(this)}
                                     />
                              
