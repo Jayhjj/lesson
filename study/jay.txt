@@ -1,8 +1,0 @@
-新建了一个自己的开发分发，
-日常开发都应该在中国分支上，不影响别人，
-等开发完成后，在将代码合并到分支
-
-git branch xxx
-git checkout xxx
-
-bug fixed
