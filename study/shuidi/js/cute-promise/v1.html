@@ -1,0 +1,65 @@
+<script>
+    function CutPromise(executor){
+        this.status = 'pending';//状态为pending 的时候
+        this.value = null;
+        this.reason = null;
+        this.onFulfilledCbs = [];   // 数组
+        this.onRejectedCbs = [];    // 
+        //resolve  -> fullfilled
+        //reject -> rejected  
+        //怎么知道 调用了
+        let self = this;
+        function resolve(value){ 
+            console.log('setTimeout 执行了');//后执行
+            self.status = 'fulfilled';
+            self.status = value;
+            // console.log('val',value);
+            //让then  onFilfilled 回调先调用
+            for (let fn of self.onFulfilledCbs) {
+            fn(value);
+      }
+        };
+        function reject(reason){
+            self.status = 'rejected';
+            self.reason = reason;
+            //让then  onFilfilled 回调先调用
+            for (let fn of self.onRejectedCbs) {
+            fn(reason);
+      }
+
+        };
+        executor(resolve,reject);//resolve,reject 是两个函数
+    }
+
+
+    CutPromise.prototype.then = function(onFulfilled,onRejected){
+        console.log('then先执行了');//先执行
+        let self  = this;
+        if(self.status === 'fulfilled'){
+            onFulfilled(self.value);
+        }else if(self.status === 'rejected'){
+            onRejected(self.reason);
+        }else if(self.status === 'pending'){
+            //onFulfilled onRejected  先等着 resolve() reject() 才会执行
+            self.onFulfilledCbs.push(onFulfilled);
+            self.onRejectedCbs.push(onRejected);
+        }
+    }
+
+
+    new CutPromise((resolve,reject) =>{
+        // console.log(resolve,reject);
+        // resolve(1);
+        setTimeout(()=>{
+            resolve(666);//不输出，是因为根据evenloop机制，.then 会比setTimeout先执行
+        },2000)
+    })
+
+    .then((val)=>{
+        console.log('then cb called');
+        console.log(val);
+    })
+    // .then((val) => {
+    //     console.log('这是第二个');
+    // })
+</script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function test(fn){
+            setTimeout(()=>{
+                fn('hello word')
+            },3000)
+        }
+        test(function(val){
+            // val === 'hello world'
+            console.log(val)
+        })
+        // 3s 输出 hello world
+        //cb -> promise  -> Co(generate) -> async
+        //pending -> reject 不可逆的,
+        new Promise((resolve,reject)=>{
+            resolve(1);//可以接受一个值
+        })
+        .then((val)=>{
+            console.log(val);
+        })
+    </script>
+</body>
+</html>
