@@ -9,6 +9,7 @@ import XiaoxjiejieItem from './XiaojiejieItem'
              list:["头部按摩","精油推背"]
          }
      }//数据初始化
+     
      render(){
          return(
              <Fragment>
