@@ -1,0 +1,12 @@
+{
+  "name": "is_yh",
+  "version": "1.0.0",
+  "description": "- http://www.baidu.com  发送什么?\r   全栈启用https\r   状态码 ?\r   304\r   301   永久性跳转\r   302   临时性的跳转\r     GET\r     POST -> 降级为GET\r   307   临时性跳转\r     api  POST ->  GET",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
