@@ -1,0 +1,16 @@
+{
+  "name": "babel-plugin-import",
+  "version": "1.0.0",
+  "description": "parse -> transform -> generate\r ```js\r <div>\r     <p></p>\r </div>\r - 解析: code -> AST\r     - 词法分析：状态机， 源码解析为一个个 token, div, p\r     - 语法分析: 父子关系构造出来   html -> dom 树",
+  "main": "index.js",
+  "scripts": {
+    "compile": "babel test.js --out-file test.compiled.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6"
+  }
+}
