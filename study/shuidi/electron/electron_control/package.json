@@ -1,0 +1,16 @@
+{
+  "name": "electron_control",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main/index.js",
+  "dependencies": {
+    "electron": "^9.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start:main": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
