@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>hello </h2>
+    <script>
+        // html -> chromium 文件来运行的 node环境
+        const {ipcRenderer} = require('electron');
+        var events = require('events');
+        console.log(ipcRenderer instanceof events.EventEmitter,'-------');
+        // EventEmitter 是 node 异步事件循环机制的实现
+        //ipcRenderer 有一个send 方法  在nodejs中
+        // 订阅发布者模式 ，send 是一个机制
+        // msg_name
+        ipcRenderer.send('greet',{
+            message:'hello main !'
+        })
+        ipcRenderer.on('greet',(event,args) => {
+            console.log(args)
+        })
+    </script>
+</body>
+</html>
